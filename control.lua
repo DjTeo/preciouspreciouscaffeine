@@ -42,7 +42,11 @@ function onTick()
     -- The first time the caffeine level is zero (usually at game start), we save the
     -- initial modifier
     for i, player in pairs(game.players) do
-        updateCaffeineLevel(player)
+    	if (player.connected == true) then 
+	    	  if (player.character ~= nil) then
+            updateCaffeineLevel(player)
+          end
+      end
     end
 end
 
